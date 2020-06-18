@@ -2,6 +2,8 @@
 
 //Big O Notation: O(n) [Linear Time]. Single for loop requires that each element in the array is checked. So for n elements there are n comparisons/operations.
 
+//Added break statement in v2 to make more efficient. Although this does not change the Big O Notation since worst case scenario for scalability would still be O(n);
+
 const nemo = ['nemo'];
 const large = new Array(10000).fill('nemo');
 const {performance} = require('perf_hooks');
@@ -11,6 +13,7 @@ function findNemo(array) {
   for(let i = 0; i < array.length; i++){
     if (array[i] === 'nemo') {
       console.log('Found NEMO!');
+      break;
     }
   }
   let t1 = performance.now();
